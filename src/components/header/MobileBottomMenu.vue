@@ -4,8 +4,8 @@
             <nav class="w-full">
                 <ul class="flex list-none pb-1" >
                   <li v-for="item in Menu" :key="item.id">
-                      <div class="grid text-secondary hover:text-black text-center" >
-                          <font-awesome-icon :icon="['fas', item.icon]" class="mt-3 pb-2 text-8 mx-7"  />
+                      <div class="grid text-primary hover:text-black text-center" >
+                          <font-awesome-icon :icon="['fas', item.icon]" class="mt-3 pb-2 text-7 mx-7"  />
                           <span class="text-xs ">{{item.title}}</span>
                       </div>
                   </li>
@@ -26,35 +26,35 @@ data () {
         Menu : [
           {
             id: 1,
-            title: 'Home',
+            title: 'Anasayfa',
             slug: 'home',
             icon: 'home',
           },
           {
             id: 2,
-            title: 'My Network',
+            title: 'Sepet',
             slug: 'my-network',
-            icon: 'user-friends',
+            icon: 'shopping-cart',
           },
           
           {
             id: 4,
-            title: 'Post',
+            title: 'Siparişlerim',
             slug: 'post',
-            icon: 'plus',
+            icon: 'shipping-fast',
           },
           {
             id: 5,
-            title: 'Notifications',
+            title: 'Hesabım',
             slug: 'notifications',
-            icon: 'bell',
+            icon: 'user',
           },
-          {
-            id: 3,
-            title: 'Jobs',
-            slug: 'jobs',
-            icon: 'suitcase',
-          },
+          // {
+          //   id: 6,
+          //   title: 'Favorilerim',
+          //   slug: 'jobs',
+          //   icon: 'heart',
+          // },
           
           
         ]

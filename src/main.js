@@ -14,6 +14,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+
 library.add(fab,fas,far)
 
 
@@ -23,6 +24,19 @@ library.add(fab,fas,far)
 
 var app = createApp(App).use(router,store)
 
+
 app.component('font-awesome-icon', FontAwesomeIcon)
+
+app.config.globalProperties.$filters = {
+    two_digits(value) {
+        if (value < 0) {
+            return '00';
+          }
+          if (value.toString().length <= 1) {
+            return `0${value}`;
+          }
+          return value;
+    }
+  }
 
 app.mount('#app')

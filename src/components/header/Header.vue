@@ -1,7 +1,7 @@
 <template>
     <header class="bg-white">
       <div id="header" class="bg-white h-15 w-full  border-b border-gray-200">
-          <div id="topbar" class="container  mx-auto px-24 py-2 flex justify-end ">
+          <div id="topbar" class="container  mx-auto px-24 py-2 justify-end hidden sm:block md:block lg:flex">
               <div class="hidden sm:hidden md:hidden lg:block ">
                 <ul class="flex list-none pb-1  ">
                     <li class="mx-3">
@@ -17,19 +17,19 @@
                   </ul>
               </div>
           </div>
-          <div class="container mx-auto px-24 h-16  mb-2 flex justify-between items-center border-b-default lg:border-none border-gray-300 ">
+          <div class="container mx-auto sm:px-2 lg:px-24 h-16  mb-2 flex  items-center justify-around    border-b-default lg:border-none border-gray-300  ">
                 
                    <!-- LOGO -->
-                <div id="logo" class="flex w-full lg:w-3/12">
+                <div id="logo" class="flex w-24 lg:w-64  ">
                   <img class="w-32" src="https://img-trendyol.mncdn.com/Assets//trendyol-stayhome.svg">
                 </div>
 
-                <div id="search" style="z-index: 30;"  class="lg:w-5/12 sm:w-1/12 hidden sm:hidden md:hidden lg:block text-4 font-sans-pro ">
+                <div id="search" style="z-index: 30;"  class="lg:w-5/12 sm:w-full  text-4 font-sans-pro ">
 
                       <!-- SEARCH INPUT -->
                     <div style="z-index: 20;"  class="relative text-gray-600 focus-within:text-orange-500 ">
                         <span class="absolute inset-y-0 right-0  mr-6 flex items-center p-2 ">
-                          <font-awesome-icon  @click="click" :icon="['fas', 'search']" class="mt-3 pb-1 text-6 absolute mr-4 text-orange-500"  />
+                          <font-awesome-icon  @click="click" :icon="['fas', 'search']" class="mt-2 pb-1 text-5 lg:text-6 absolute  text-orange-500"  />
                         </span>
                         <input  class="bg-theme1  text-sm rounded-full py-2 px-5 w-full border-1 border-gray-400 focus:outline-none focus:ring-1 focus:ring-primary placeholder-gray-700"
                           placeholder="Aradığınız ürün, kategori veya markayı yazınız" 
@@ -83,7 +83,7 @@
       </div>
 
        <!-- MAIN MENU -->
-      <div id="menu" class="relative h-10 flex justify-between items-center border-default border-gray-600 ">
+      <div id="menu" class="relative h-10 hidden justify-between items-center border-default border-gray-600  sm:block md:block lg:flex ">
           <ul class="flex list-none pb-1 container mx-auto px-24 ">
             <li class=" mx-3 " v-for="item in Menu" :key="item.id">
                 <div class="grid items-center hover:text-orange-500"
@@ -119,16 +119,20 @@
           </ul>
       </div>
 
-
+      <div>
+        <MobileBottomMenu/>
+      </div>
+      
     </header>
     
 </template>
-
 <script>
+import MobileBottomMenu from './MobileBottomMenu.vue';
+
 export default {
   name: "Header",
   components: {
-   
+   MobileBottomMenu
   },
 data () {
     return {
